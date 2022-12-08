@@ -1,6 +1,25 @@
 version: "3.1"
 
 nlu:
+- intent: chitchat/ask_name
+  examples: |
+    - What is your name?
+    - May I know your name?
+    - What do people call you?
+    - Do you have a name for yourself?
+
+- intent: chitchat/ask_birth
+  examples: |
+    - Where were your born?
+    - When is your birthday?
+    - Who created you?
+    - Who made you? 
+
+- intent: out_of_scope
+  examples: |
+    - I want to order some food
+    - What is 2 + 2
+    - Who is the US President? 
 - intent: greet
   examples: |
     - hey
