@@ -51,11 +51,11 @@ responses:
   utter_ask_pizza_type:
   - text: "What kind of pizza would you like to buy"
 
-  utter_chitchat_ask_name:
+  utter_chitchat/ask_name:
   - text: "Hello, my name is BrainBot!"
   - text: "My given name is Brainbot, but you can call me anything!"
 
-  utter_chitchat_ask_birth:
+  utter_chitchat/ask_birth:
   - text: "I'm born through the mechanical engineering department at Imperial! My creator is named Han Kee, I heard he's very friendly."
   - image: "https://asset-library.imperial.ac.uk/assetbank-imperial/images/assetbox/cc8302e2-4f78-48ec-89bf-11146a5bcc80/251369_display.jpgtra"
   
@@ -93,4 +93,5 @@ actions:
 - utter_greet
 - utter_pizza_slots
 - utter_submit
-- validate_simple_pizza_form
+- validate_simple_pizza_form#
+- utter_chitchat
