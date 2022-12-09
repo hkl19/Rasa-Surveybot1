@@ -20,6 +20,7 @@ nlu:
     - I want to order some food
     - What is 2 + 2
     - Who is the US President? 
+
 - intent: greet
   examples: |
     - hey
@@ -113,24 +114,3 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - what are you? 
-
-- intent: buy_pizza
-  examples: |
-    - i'd like to buy a pizza 
-    - i want a pizza
-    - can i buy a pizza
-    - I'm interested in a Italian pizza
-    - I wanna buy a pizza
-
-- intent: inform
-  examples: |
-    - i'd like a [large](pizza_size) pizza
-    - i want to order a [xl](pizza_size) [hawaian](pizza_type) pizza
-    - [medium](pizza_size) pizza
-    - [xl](pizza_size)
-    - [small](pizza_size)
-    - [s](pizza_size)
-    - [pepperoni](pizza_type)
-    - give me a [mozerella](pizza_type) pizza
-    - [hawaii](pizza_type) pizza
-    - [veggie](pizza_type)
