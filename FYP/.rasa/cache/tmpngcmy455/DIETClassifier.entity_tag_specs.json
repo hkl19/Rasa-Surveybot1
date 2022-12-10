@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-cuisine",
+      "2": "I-cuisine",
+      "3": "L-cuisine",
+      "4": "U-cuisine",
+      "5": "B-cuisines",
+      "6": "I-cuisines",
+      "7": "L-cuisines",
+      "8": "U-cuisines",
+      "9": "B-num_people",
+      "10": "I-num_people",
+      "11": "L-num_people",
+      "12": "U-num_people",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-cuisine": 1,
+      "I-cuisine": 2,
+      "L-cuisine": 3,
+      "U-cuisine": 4,
+      "B-cuisines": 5,
+      "I-cuisines": 6,
+      "L-cuisines": 7,
+      "U-cuisines": 8,
+      "B-num_people": 9,
+      "I-num_people": 10,
+      "L-num_people": 11,
+      "U-num_people": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

@@ -1,26 +1,51 @@
 version: "3.1"
-
 nlu:
+- intent: request_restaurant
+  examples: |
+    - I'm looking for a restaurant
+    - can I get [japanese](cuisine) food in my area?
+    - a restaurant that serves [chinese](cuisine) food please
+    - I'd like a restaurant for food
+    - I'm looking for a restaurant that serves [mediterranean](cuisine) food
+    - I'd love something to eat right now
+    - I am down for some [italian](cuisine) food
+    - I'm feeling rather hungry, are there any [chinese](cuisine) restaurants nearby?
+    - I want to eat some [chinese](cuisine) takeout
+- intent: inform
+  examples: |
+    - [afghan](cuisine) food
+    - how bout [asian oriental](cuisine)
+    - what about [indian](cuisine) food
+    - uh how about [turkish](cuisine) type of food
+    - um [english](cuisine)
+    - im looking for [tuscan](cuisine) food
+    - id like [moroccan](cuisine) food
+    - for [ten](num_people) people
+    - [2](num_people) people
+    - for [three](num_people) people
+    - just [one](num_people) person
+    - book for [seven](num_people) people
+    - [2](num_people) please
+    - [9](num_people) people
+    - Around [5](num_people) people in total
+    - [8](num_people) people overall
 - intent: chitchat/ask_name
   examples: |
     - What is your name?
     - May I know your name?
     - What do people call you?
     - Do you have a name for yourself?
-
 - intent: chitchat/ask_birth
   examples: |
     - Where were your born?
     - When is your birthday?
     - Who created you?
-    - Who made you? 
-
+    - Who made you?
 - intent: out_of_scope
   examples: |
     - I want to order some food
     - What is 2 + 2
-    - Who is the US President? 
-
+    - Who is the US President?
 - intent: greet
   examples: |
     - hey
@@ -37,7 +62,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - see ya
@@ -50,7 +74,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -61,7 +84,7 @@ nlu:
     - correct
     - exactly
     - yeah
-
+    - Sure! that doesnt sound bad
 - intent: deny
   examples: |
     - no
@@ -71,8 +94,7 @@ nlu:
     - don't like that
     - no way
     - not really
-    - nah 
-
+    - nah
 - intent: mood_great
   examples: |
     - perfect
@@ -89,7 +111,7 @@ nlu:
     - really good
     - so good
     - so perfect
-
+    - Yeap, perfect
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -105,12 +127,10 @@ nlu:
     - not very good
     - extremly sad
     - so sad
-    - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-    - what are you? 
+    - what are you?

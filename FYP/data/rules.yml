@@ -2,6 +2,25 @@ version: "3.1"
 
 rules:
 
+#2 rules for restaurant_form, 1 for activation, 1 for submission:
+#Provide training examples in NLU file 
+- rule: activate restaurant form
+  steps:
+    - intent: request_restaurant  #Intent that triggers form activation
+    - action: restaurant_form     #Run the form
+    - active_loop:  restaurant_form  # Form is active
+
+- rule: submit form
+  condition:
+  - active_loop:  restaurant_form  #only be available if form is already activated
+  steps:
+    - action: restaurant_form #run the form
+    - active_loop: null       #deactivate form as all slots filled
+    - action: utter_submit    #Say you submitted
+    - action: utter_slots_values  #Show the values provided
+
+  
+
 - rule: respond to chitchat
   steps:
   - intent: chitchat

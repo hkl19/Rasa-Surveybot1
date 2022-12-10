@@ -1,68 +1,104 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - chitchat
-
+- affirm
+- bot_challenge
+- chitchat:
+    used_entities:
+    - cuisine
+    - num_people
+    is_retrieval_intent: true
+- deny
+- goodbye
+- greet
+- inform
+- mood_great
+- mood_unhappy
+- request_restaurant
 responses:
   utter_out_of_scope:
-  - text: "Sorry, I couldn't handle that request. Could you try rephrasing?"
-
+  - text: Sorry, I couldn't handle that request. Could you try rephrasing?
+  utter_ask_cuisine:
+  - text: What cuisine would you like today?
+  utter_ask_num_people:
+  - text: How many people in total?
+  utter_ask_outdoor_seating:
+  - text: Do you want to sit outside?
+  utter_submit:
+  - text: All done!
+  utter_slots_values:
+  - text: |
+      I am going to run a restaurant search using the following 
+       - cuisine: {cuisine}
+       - num_people: {num_people}
+       - outdoor_seating:  {outdoor_seating}
+       Are these all correct?
   utter_greet:
-  - text: "Hey! How are you?"
-  - text: "Howdy Partner"
-  - text: "Hello, nice to meet you!"
-  - text: "Hiya, how is your day today"
-  - text: "Hello, what can I do for you today"
-
+  - text: Hey! How are you?
+  - text: Howdy Partner
+  - text: Hello, nice to meet you!
+  - text: Hiya, how is your day today
+  - text: Hello, what can I do for you today
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
   utter_chitchat/ask_name:
-  - text: "My given name is Brainbot, but you can call me anything!"
-
+  - text: My given name is Brainbot, but you can call me anything!
   utter_chitchat/ask_birth:
-  - image: "https://asset-library.imperial.ac.uk/assetbank-imperial/images/assetbox/cc8302e2-4f78-48ec-89bf-11146a5bcc80/251369_display.jpgtra"
-    text: "I'm born through the mechanical engineering department at Imperial! My creator is named Han Kee, I heard he's very friendly."
-
+  - image: https://asset-library.imperial.ac.uk/assetbank-imperial/images/assetbox/cc8302e2-4f78-48ec-89bf-11146a5bcc80/251369_display.jpgtra
+    text: I'm born through the mechanical engineering department at Imperial! My creator is named Han Kee, I heard he's very friendly.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
 entities:
-- name
-
+- cuisine
+- num_people
 slots:
-  name:
-  - mapping: from_entity
-    - text: name
-
+  cuisine:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: cuisine
+  num_people:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: num_people
+  outdoor_seating:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: affirm
+      value: true
+      conditions:
+      - active_loop: restaurant_form
+        requested_slot: outdoor_seating
+    - type: from_intent
+      intent: deny
+      value: false
+      conditions:
+      - active_loop: restaurant_form
+        requested_slot: outdoor_seating
 forms:
-  simple_pizza_form:
+  restaurant_form:
+    ignored_intents:
+    - chitchat
     required_slots:
-      - pizza_size
-      - pizza_type
-
+    - cuisine
+    - num_people
+    - outdoor_seating
 actions:
 - utter_ask_continue
+- utter_chitchat
 - utter_goodbye
 - utter_greet
+- utter_happy
+- utter_slots_values
+- utter_submit
