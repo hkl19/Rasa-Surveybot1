@@ -4,13 +4,13 @@ rules:
 
 #2 rules for restaurant_form, 1 for activation, 1 for submission:
 #Provide training examples in NLU file 
-- rule: activate restaurant form
+- rule: activate survey form
   steps:
     - intent: request_restaurant  #Intent that triggers form activation
     - action: restaurant_form     #Run the form
     - active_loop:  restaurant_form  # Form is active
 
-- rule: submit form
+- rule: submit survey form
   condition:
   - active_loop:  restaurant_form  #only be available if form is already activated
   steps:

@@ -14,9 +14,69 @@ intents:
 - mood_great
 - mood_unhappy
 - request_restaurant
+- request_SOLE
+
 responses:
+#responses for the SOLE survey
+  utter_request_SOLE:
+  - text: Shall we start with the survey? 
+  utter_ask_module:
+  - text: Which module would you like to talk about today? 
+  utter_ask_lecturer_name:
+  - text: Great! Could I get the name of the lecturer as well? 
+  utter_ask_course_structure:
+  - text: What is your opinion on the structure of the course itself? 
+  utter_ask_course_rate:
+  - text: How much would you rate this module on content alone from 1 to 5?
+  utter_ask_course_feedback:
+  - text: Would you like to give some constructive feedback for solely the course? 
+  utter_ask_lecturer:
+  - text: What are your thoughts on {lecturer}'s performance throughout the module?
+  utter_ask_lecturer_rate:
+  - text: How much would you rate {lecturer} from 1 to 5 on his delivery?
+  utter_ask_lecturer_feedback:
+  - text: Any thoughts on what {lecturer} should further improve on? 
+  utter_ask_module_help:
+  - text: What are your thoughts on the overall module difficulty? Do you think enough support was provided? 
+  utter_ask_feedback_general:
+  - text: Are there any final thoughts that you would like to share before we close the session? 
+  #Positive answers 
+  utter_cheer_course_structure:
+  - text: Sounds great, I'm glad you genuinely enjoyed the content!
+  - text: Great! Seems to me that everyone loved how {module} was structured this year.
+  utter_cheer_course_feedback:
+  - text: Great to hear. Seems like there's been alot of positive feedback for {module} this year! 
+  - text: Sweet. I'll take note of that, and perhaps share it with {lecturer} too.
+  utter_cheer_lecturer:
+  - text: Awesome. I'm sure {lecturer} would be stoked to hear it. 
+  - text: Sounds good. I'm sure {lecturer} would be happy to hear that. 
+  utter_cheer_lecturer_feedback:
+  - text: Sounds like {lecturer} is really popular with the kids these days! 
+  - text: Nicely said. {lecturer} would be blushing by now!
+  utter_cheer_support:
+  - text: That's great to hear. I'm happy {lecturer} gave enough of his support to you!
+  utter_neutral_feedback:
+  - text: Great! thank you so much for your time. Let me know if you need anything else
+  #Negative answers
+  utter_sad_course_structure:
+  - text: Aw, I'm sorry to hear that. We will take your words into account. 
+  - text: I'm sorry to hear that. I'll make sure the department gets to hear this. 
+  utter_sad_course_feedback:
+  - text: I apologize for the suboptimal delivery this year. I'll pass your feedback to the department. 
+  - text: I apologize for the trouble. I'll make sure your feedback will lead to better changes moving forward.
+  utter_sad_lecturer:
+  - text: I'm sorry to hear that. I'll let {lecturer} know about this
+  - text: I'm sorry. I'll make sure {lecturer} understands what improvements there is to make. 
+  utter_sad_lecturer_feedback:
+  - text: Thank you for the feedback. I'll make sure to pass this on to {lecturer}. I'm sure {lecturer} really appreciates your thoughts.
+  utter_sad_support:
+  - text: I'm sorry. I'll ensure that future years would be provided with better care! 
+
+  #Fallback responses
   utter_out_of_scope:
   - text: Sorry, I couldn't handle that request. Could you try rephrasing?
+
+  #Restaurant form responses
   utter_ask_cuisine:
   - text: What cuisine would you like today?
   utter_ask_num_people:
@@ -32,6 +92,8 @@ responses:
        - num_people: {num_people}
        - outdoor_seating:  {outdoor_seating}
        Are these all correct?
+
+#Common responses
   utter_greet:
   - text: Hey! How are you?
   - text: Howdy Partner
@@ -54,13 +116,26 @@ responses:
   utter_chitchat/ask_birth:
   - image: https://asset-library.imperial.ac.uk/assetbank-imperial/images/assetbox/cc8302e2-4f78-48ec-89bf-11146a5bcc80/251369_display.jpgtra
     text: I'm born through the mechanical engineering department at Imperial! My creator is named Han Kee, I heard he's very friendly.
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+#Entities
 entities:
 - cuisine
 - num_people
+- lecturer
+- module
+- course_structure
+- course_feedback
+- lecturer_rating
+- lecturer_feedback
+- module_support
+- general_feedback
+
 slots:
+#Restaurant slots
   cuisine:
     type: text
     mappings:
@@ -86,7 +161,27 @@ slots:
       conditions:
       - active_loop: restaurant_form
         requested_slot: outdoor_seating
+#SOLE slots
+  module:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: module
+  lecturer:
+    type: text
+    mappings: 
+    - type: from_entity
+      entity: lecturer
+  course_structure:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: course_structure 
+
+
+  
 forms:
+#Restaurant form
   restaurant_form:
     ignored_intents:
     - chitchat
@@ -94,6 +189,20 @@ forms:
     - cuisine
     - num_people
     - outdoor_seating
+#SOLE Survey form
+  SOLE_form:
+    ignored_intents:
+    - chitchat
+    required_slots:
+    - module
+    - lecturer
+    - course_structure
+    - course_feedback
+    - lecturer_rating
+    - lecturer_feedback
+    - module_support
+    - general_feedback
+
 actions:
 - utter_ask_continue
 - utter_chitchat
