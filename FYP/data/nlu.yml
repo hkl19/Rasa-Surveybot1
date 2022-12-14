@@ -10,11 +10,6 @@ nlu:
     - May I provide some feedback
     - Let's start the SOLE survey
 
-- inform_module_name
-- inform_lecturer_name
-- inform_course_structure
-- inform_course_rate
-
 - intent: inform_module_name
   examples: |
     - I'd like to talk about {Mechatronics 2} [module]
