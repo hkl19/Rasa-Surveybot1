@@ -30,3 +30,24 @@ stories:
   - action: utter_goodbye
 
 
+- story: happy path sole 1
+  steps:
+  - intent: greet
+  - action: utter_greet 
+  - intent: request_SOLE_form
+  - action: SOLE_form
+  - active_loop:  SOLE_form
+  - action: utter_ask_module
+  - intent: inform_module_name
+  - action: utter_ask_lecturer_name
+  - intent: inform_lecturer_name
+  - action: utter_ask_course_structure
+  - intent: inform_happy_course_structure
+  - action: utter_cheer_course_structure
+  - action: utter_ask_course_rate
+  - intent: inform_happy_course_rate
+  - action: utter_cheer_course_feedback
+  - action: utter_slots_values
+  - action: utter_submit 
+  - action: action_deactivate_loop
+  - active_loop:  null

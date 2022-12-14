@@ -4,17 +4,24 @@ intents:
 - bot_challenge
 - chitchat:
     used_entities:
-    - cuisine
-    - num_people
+    - lecturer_name
+    - module
+    - course_structure
+    - course_rate
     is_retrieval_intent: true
 - deny
 - goodbye
 - greet
-- inform
 - mood_great
 - mood_unhappy
-- request_restaurant
-- request_SOLE
+
+- request_SOLE_form
+- inform_module_name
+- inform_lecturer_name
+- inform_happy_course_structure
+- inform_sad_course_structure
+- inform_happy_course_rate
+- inform_sad_course_rate
 
 responses:
 #responses for the SOLE survey
@@ -28,18 +35,16 @@ responses:
   - text: What is your opinion on the structure of the course itself? 
   utter_ask_course_rate:
   - text: How much would you rate this module on content alone from 1 to 5?
-  utter_ask_course_feedback:
-  - text: Would you like to give some constructive feedback for solely the course? 
-  utter_ask_lecturer:
-  - text: What are your thoughts on {lecturer}'s performance throughout the module?
-  utter_ask_lecturer_rate:
-  - text: How much would you rate {lecturer} from 1 to 5 on his delivery?
-  utter_ask_lecturer_feedback:
-  - text: Any thoughts on what {lecturer} should further improve on? 
-  utter_ask_module_help:
-  - text: What are your thoughts on the overall module difficulty? Do you think enough support was provided? 
-  utter_ask_feedback_general:
-  - text: Are there any final thoughts that you would like to share before we close the session? 
+  #utter_ask_lecturer:
+  #- text: What are your thoughts on {lecturer}'s performance throughout the module?
+  # #utter_ask_lecturer_rate:
+  # - text: How much would you rate {lecturer} from 1 to 5 on his delivery?
+  # utter_ask_lecturer_feedback:
+  # - text: Any thoughts on what {lecturer} should further improve on? 
+  # utter_ask_module_help:
+  # - text: What are your thoughts on the overall module difficulty? Do you think enough support was provided? 
+  # utter_ask_feedback_general:
+  # - text: Are there any final thoughts that you would like to share before we close the session? 
   #Positive answers 
   utter_cheer_course_structure:
   - text: Sounds great, I'm glad you genuinely enjoyed the content!
@@ -47,16 +52,16 @@ responses:
   utter_cheer_course_feedback:
   - text: Great to hear. Seems like there's been alot of positive feedback for {module} this year! 
   - text: Sweet. I'll take note of that, and perhaps share it with {lecturer} too.
-  utter_cheer_lecturer:
-  - text: Awesome. I'm sure {lecturer} would be stoked to hear it. 
-  - text: Sounds good. I'm sure {lecturer} would be happy to hear that. 
-  utter_cheer_lecturer_feedback:
-  - text: Sounds like {lecturer} is really popular with the kids these days! 
-  - text: Nicely said. {lecturer} would be blushing by now!
-  utter_cheer_support:
-  - text: That's great to hear. I'm happy {lecturer} gave enough of his support to you!
-  utter_neutral_feedback:
-  - text: Great! thank you so much for your time. Let me know if you need anything else
+  # utter_cheer_lecturer:
+  # - text: Awesome. I'm sure {lecturer} would be stoked to hear it. 
+  # - text: Sounds good. I'm sure {lecturer} would be happy to hear that. 
+  # utter_cheer_lecturer_feedback:
+  # - text: Sounds like {lecturer} is really popular with the kids these days! 
+  # - text: Nicely said. {lecturer} would be blushing by now!
+  # utter_cheer_support:
+  # - text: That's great to hear. I'm happy {lecturer} gave enough of his support to you!
+  # utter_neutral_feedback:
+  # - text: Great! thank you so much for your time. Let me know if you need anything else
   #Negative answers
   utter_sad_course_structure:
   - text: Aw, I'm sorry to hear that. We will take your words into account. 
@@ -64,13 +69,27 @@ responses:
   utter_sad_course_feedback:
   - text: I apologize for the suboptimal delivery this year. I'll pass your feedback to the department. 
   - text: I apologize for the trouble. I'll make sure your feedback will lead to better changes moving forward.
-  utter_sad_lecturer:
-  - text: I'm sorry to hear that. I'll let {lecturer} know about this
-  - text: I'm sorry. I'll make sure {lecturer} understands what improvements there is to make. 
-  utter_sad_lecturer_feedback:
-  - text: Thank you for the feedback. I'll make sure to pass this on to {lecturer}. I'm sure {lecturer} really appreciates your thoughts.
-  utter_sad_support:
-  - text: I'm sorry. I'll ensure that future years would be provided with better care! 
+  # utter_sad_lecturer:
+  # - text: I'm sorry to hear that. I'll let {lecturer} know about this
+  # - text: I'm sorry. I'll make sure {lecturer} understands what improvements there is to make. 
+  # utter_sad_lecturer_feedback:
+  # - text: Thank you for the feedback. I'll make sure to pass this on to {lecturer}. I'm sure {lecturer} really appreciates your thoughts.
+  # utter_sad_support:
+  # - text: I'm sorry. I'll ensure that future years would be provided with better care! 
+
+  utter_submit:
+  - text: All done! I shall submit this to the department. Thank you for participating
+  utter_slots_values:
+  - text: |
+      As a quick check
+       - The module you are referring to is {module}
+       - The lecturer in charge is {lecturer_name}
+       - You rated the course a {course_rate} out of 5
+       - You believe the structure is {course_structure}
+       - Your feedback was to {feedback}
+       Are these all correct?
+
+
 
   #Fallback responses
   utter_out_of_scope:
@@ -83,16 +102,7 @@ responses:
   - text: How many people in total?
   utter_ask_outdoor_seating:
   - text: Do you want to sit outside?
-  utter_submit:
-  - text: All done!
-  utter_slots_values:
-  - text: |
-      I am going to run a restaurant search using the following 
-       - cuisine: {cuisine}
-       - num_people: {num_people}
-       - outdoor_seating:  {outdoor_seating}
-       Are these all correct?
-
+ 
 #Common responses
   utter_greet:
   - text: Hey! How are you?
@@ -123,16 +133,14 @@ session_config:
 
 #Entities
 entities:
-- cuisine
-- num_people
-- lecturer
+- lecturer_name
 - module
 - course_structure
-- course_feedback
-- lecturer_rating
-- lecturer_feedback
-- module_support
-- general_feedback
+- course_rate
+# - lecturer_rating
+# - lecturer_feedback
+# - module_support
+# - general_feedback
 
 slots:
 #Restaurant slots
@@ -167,16 +175,22 @@ slots:
     mappings:
     - type: from_entity
       entity: module
-  lecturer:
+  lecturer_name:
     type: text
     mappings: 
     - type: from_entity
-      entity: lecturer
+      entity: lecturer_name
   course_structure:
     type: text
     mappings:
     - type: from_entity
       entity: course_structure 
+  course_rate:
+    type: float 
+    mappings:
+    - type: from_entity
+      entity: course_rate
+
 
 
   
@@ -197,11 +211,10 @@ forms:
     - module
     - lecturer
     - course_structure
-    - course_feedback
-    - lecturer_rating
-    - lecturer_feedback
-    - module_support
-    - general_feedback
+    # - lecturer_rating
+    # - lecturer_feedback
+    # - module_support
+    # - general_feedback
 
 actions:
 - utter_ask_continue
@@ -211,3 +224,7 @@ actions:
 - utter_happy
 - utter_slots_values
 - utter_submit
+- utter_cheer_course_structure
+- utter_cheer_course_feedback
+- utter_sad_course_structure
+- utter_sad_course_feedback

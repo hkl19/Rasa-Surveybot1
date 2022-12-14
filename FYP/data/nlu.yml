@@ -1,34 +1,89 @@
 version: "3.1"
 nlu:
-- intent: request_restaurant
+
+#Intents for SOLE:
+- intent: request_SOLE_form
   examples: |
-    - I'm looking for a restaurant
-    - can I get [japanese](cuisine) food in my area?
-    - a restaurant that serves [chinese](cuisine) food please
-    - I'd like a restaurant for food
-    - I'm looking for a restaurant that serves [mediterranean](cuisine) food
-    - I'd love something to eat right now
-    - I am down for some [italian](cuisine) food
-    - I'm feeling rather hungry, are there any [chinese](cuisine) restaurants nearby?
-    - I want to eat some [chinese](cuisine) takeout
-- intent: inform
+    - Let's start the survey
+    - Can I start giving feedback
+    - Fire up the survey form
+    - May I provide some feedback
+    - Let's start the SOLE survey
+
+- inform_module_name
+- inform_lecturer_name
+- inform_course_structure
+- inform_course_rate
+
+- intent: inform_module_name
   examples: |
-    - [afghan](cuisine) food
-    - how bout [asian oriental](cuisine)
-    - what about [indian](cuisine) food
-    - uh how about [turkish](cuisine) type of food
-    - um [english](cuisine)
-    - im looking for [tuscan](cuisine) food
-    - id like [moroccan](cuisine) food
-    - for [ten](num_people) people
-    - [2](num_people) people
-    - for [three](num_people) people
-    - just [one](num_people) person
-    - book for [seven](num_people) people
-    - [2](num_people) please
-    - [9](num_people) people
-    - Around [5](num_people) people in total
-    - [8](num_people) people overall
+    - I'd like to talk about {Mechatronics 2} [module]
+    - I want to give feedback on {ECM} [module]
+    - I want to rant about {DMT} [module]
+    - Let's discuss about {Embedded C} [module] by {Ravi} [lecturer_name]
+    - Can I share about {Machine Learning} [module] by {Peter} [lecturer_name]
+    - Let's walk through my experience in {Statistics} [module]
+    - I would love to talk about {Fluid Mechanics 3} [module]
+    - Can I share about my experience in {Fluid Mechanics} [module] by {Fred} [lecturer_name]
+    - Let me review {Mike} [lecturer_name] on his lectures about {Thermodynamics}
+    - I'd love to give my thoughts on {Jun Jiang} [lecturer_name] and his delivered course, {FEA} [module]
+    - I want to talk about {Robotics} [module]
+
+
+- intent: inform_lecturer_name
+  examples: |
+    - The lecturer would be {Mike Ristic} [lecturer_name]
+    - I think the lecturer's name is {John Snow} [lecturer_name]
+    - I think for the course, {PBJ} [lecturer_name] was in charge
+    - {Christoph} [lecturer_name] was the lecturer
+    - {Amy Morgans} [lecturer_name] was in charge
+    - I believe it would be {Dr. Ambrose} [lecturer_name]
+
+- intent: inform_happy_course_structure
+  examples: |
+    - I found it {well structured} [course_structure]
+    - I think it was really {well planned} [course_structure]
+    - Overall, the course was {implemented efficiently} [course_structure]
+    - I think it was {spectacular} [course_structure]
+    - I found the content {engaging} [course_structure]
+    - The module really {delivered} [course_structure]
+    - It's delivery was {well done} [course_structure]
+    - I really enjoyed how {great} [course_structure] the department done on this 
+    - The core contents was {lovely} [course_structure]
+
+- intent: inform_sad_course_structure
+  examples: |
+    - I hated the {messy} [course_structure] notes   
+    - I disliked how {unorganised} [course_structure] it was
+    - I think it was {overambitious} [course_structure]
+    - I believe the deadlines were {too tight} [course_structure]
+    - It was {not well planned} [course_structure]
+    - The delivery was super {poor} [course_structure]
+    - Don't know why they bother, I disliked every part of its {boring} [course_structure]
+    - I really {did not learn} [course_structure] alot
+    - It was {overly complicated} [course_structure]
+    - There was {no details} [course_structure] provided in the notes 
+
+- intent: inform_happy_course_rate
+  examples: |
+    - I give it a {5} [course_rate] out of 5
+    - I'd rate a {4}[course_rate] for how well it was done
+    - I love Ravi so I'd give it a {5}[course_rate]
+    - Awesome course, {5}[course_rate] out of 5
+    - Great learning experience, it thought me so much. I'd rate it {4}[course_rate] out of 5
+    - Really good, {4}[course_rate] out of 5
+
+- intent: inform_sad_course_rate
+  examples: |
+    - {3} out of 5 for me
+    - Below average, {2} out of 5
+    - Totally disliked it, {1} out of 5
+    - L score, {1} out of 5
+    - Didn't like it one bit, {2} out of 5
+    - Low, around {2} out of 5
+    - Make it {1} out of 5
+    - {3} out of 5, it was mid at best
+    
 - intent: chitchat/ask_name
   examples: |
     - What is your name?
