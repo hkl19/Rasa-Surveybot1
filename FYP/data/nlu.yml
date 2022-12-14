@@ -36,32 +36,32 @@ nlu:
 
 - intent: inform_happy_course_structure
   examples: |
-    - I found it [well structured] (course_structure)
-    - I think it was really [well planned] (course_structure)
-    - Overall, the course was [implemented efficiently] (course_structure)
-    - I think it was [spectacular] (course_structure)
-    - I found the content [engaging] (course_structure)
-    - The module really [delivered] (course_structure)
-    - It's delivery was [well done] (course_structure)
-    - I really enjoyed how [great] (course_structure) the department done on this 
-    - The core contents was [lovely] (course_structure)
+    - I found it [well structured](course_structure)
+    - I think it was really [well planned](course_structure)
+    - Overall, the course was [implemented efficiently](course_structure)
+    - I think it was [spectacular](course_structure)
+    - I found the content [engaging](course_structure)
+    - The module really [delivered](course_structure)
+    - It's delivery was [well done](course_structure)
+    - I really enjoyed how [great](course_structure) the department done on this 
+    - The core contents was [lovely](course_structure)
 
 - intent: inform_sad_course_structure
   examples: |
-    - I hated the (messy) (course_structure) notes   
-    - I disliked how (unorganised) (course_structure) it was
-    - I think it was (overambitious) (course_structure)
-    - I believe the deadlines were (too tight) (course_structure)
-    - It was (not well planned) (course_structure)
-    - The delivery was super (poor) (course_structure)
-    - Don't know why they bother, I disliked every part of its (boring) (course_structure)
-    - I really (did not learn) (course_structure) alot
-    - It was (overly complicated) (course_structure)
-    - There was (no details) (course_structure) provided in the notes 
+    - I hated the [messy](course_structure) notes   
+    - I disliked how [unorganised](course_structure) it was
+    - I think it was [overambitious](course_structure)
+    - I believe the deadlines were [too tight](course_structure)
+    - It was [not well planned](course_structure)
+    - The delivery was super [poor](course_structure)
+    - Don't know why they bother, I disliked every part of its [boring](course_structure)
+    - I really [did not learn](course_structure) alot
+    - It was [overly complicated](course_structure)
+    - There was [no details](course_structure) provided in the notes 
 
 - intent: inform_happy_course_rate
   examples: |
-    - I give it a [5] (course_rate) out of 5
+    - I give it a [5](course_rate) out of 5
     - I'd rate a [4](course_rate) for how well it was done
     - I love Ravi so I'd give it a [5](course_rate)
     - Awesome course, [5](course_rate) out of 5
