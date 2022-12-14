@@ -4,14 +4,15 @@ intents:
 - bot_challenge
 - chitchat:
     used_entities:
+    - course_rate
+    - course_structure
     - lecturer_name
     - module
-    - course_structure
-    - course_rate
     is_retrieval_intent: true
 - deny
 - goodbye
 - greet
+
 - mood_great
 - mood_unhappy
 
