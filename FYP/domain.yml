@@ -195,22 +195,15 @@ slots:
 
   
 forms:
-#Restaurant form
-  restaurant_form:
-    ignored_intents:
-    - chitchat
-    required_slots:
-    - cuisine
-    - num_people
-    - outdoor_seating
 #SOLE Survey form
   SOLE_form:
     ignored_intents:
     - chitchat
     required_slots:
     - module
-    - lecturer
+    - lecturer_name
     - course_structure
+    - course_rate
     # - lecturer_rating
     # - lecturer_feedback
     # - module_support
