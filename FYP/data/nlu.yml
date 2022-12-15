@@ -27,6 +27,10 @@ nlu:
     - I'd rate it a [four](course_rate) currently
     - I'm currently in year [four](year) of my undergraduate degree
     - I'm currently in year [three](year) of my bachelors 
+    - [4th](year) year
+    - [3rd](year) year
+    - [2nd](year) year
+    - [1st](year) year
 - intent: inform_module_name
   examples: |
     - I'd like to talk about [Mechatronics](module)
@@ -46,6 +50,15 @@ nlu:
     - I'll share my experience on the [MPT](module) module.
     - I'd like to share about [Machine](module) [Dynamics](module)
     - Can i share my thoughts on Business [Economics](module)?
+    - [nanomaterials](module) 
+    - [chemistry](module)
+    - [renewable energy](module)
+    - [plastic electronics](module)
+    - [robotics](module)
+    - [membrane biophysics](module)
+    - [finance](module)
+    - [computing](module) 
+
 - intent: inform_course_rate
   examples: |
     - I give it a [five](course_rate) out of five
