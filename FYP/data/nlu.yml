@@ -107,6 +107,14 @@ nlu:
     - I felt that this module was one of the toughest one, too hard for a third year student
     - I think the lectures were really engaging and well taught
     - I really enjoyed the constant feedback for improvements, it helped me alot along the year
+    - boring 
+    - really interesting 
+    - awesome
+    - love it 
+    - amazing
+    - uninformative
+    - its bad 
+    
 - intent: chitchat/ask_name
   examples: |
     - What is your name?
