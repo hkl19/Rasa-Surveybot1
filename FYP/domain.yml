@@ -19,7 +19,8 @@ intents:
 - request_SOLE_form
 - inform_year
 - inform_module_name
-- inform_course_structure
+- inform_course_structure: #ignore all entities for this intent 
+    use_entities: []
 - inform_course_rate
 
 responses:
@@ -210,6 +211,7 @@ slots:
     mappings:
     - type: from_text
       intent: inform_course_structure
+      not_intent: course_rate
   course_rate:
     type: float
     mappings:
