@@ -1,4 +1,4 @@
-version: "three.one"
+version: "3.1"
 nlu:
 - intent: request_SOLE_form
   examples: |
@@ -8,7 +8,7 @@ nlu:
     - May I provide some feedback
     - Let's start the SOLE survey
     - That's nice. Shall we start the survey?
-
+    - Lets start the survey
 - intent: inform_year
   examples: |
     - I'm currently in [first](year) year.
@@ -20,9 +20,10 @@ nlu:
     - I'm currently in year [two](year)
     - I'm currently in my [fresher](year) year
     - I'm in year [three](year) of my course
-    - I'm a year [one](year) student 
+    - I'm a year [one](year) student
     - I'm in my [penultimate](year) year
-
+    - I'm in my [third](year) year
+    - I'd rate it a [four](course_rate) currently
 - intent: inform_module_name
   examples: |
     - I'd like to talk about [Mechatronics](module)
@@ -40,8 +41,7 @@ nlu:
     - Lets talk about [Maths](module)
     - I want to share my experience in [MTM](module)
     - I'll share my experience on the [MPT](module) module.
-
-
+    - I'd like to share about [Machine](module) [Dynamics](module)
 - intent: inform_course_rate
   examples: |
     - I give it a [five](course_rate) out of five
@@ -65,19 +65,18 @@ nlu:
     - I think a [five](course_rate) out of five is justified
     - I am rating it a [four](course_rate)
     - I am rating it a [two](course_rate)
-
 - intent: inform_course_structure
   examples: |
     - I think the course overall was rushed through too quickly, with too little focus on the details
     - I think the lecturer really did an awesome job entertaining us all the way
-    - I found it really engaging and overall super exciting 
+    - I found it really engaging and overall super exciting
     - It was rather dull and not exciting. I felt really let down
-    - I didnt like it one bit, the structure was a mess. 
+    - I didnt like it one bit, the structure was a mess.
     - I loved how fast paced the flow is on the lectures, as well as the tutorial sessions
-    - I felt really listened to by the lecturer as he gave personal tutorials with so much effort 
-    - The lecturer really attended to all our needs, and the module enthusiasm reflects that 
-    - I felt that this module was one of the toughest one, too hard for a third year student 
-
+    - I felt really listened to by the lecturer as he gave personal tutorials with so much effort
+    - The lecturer really attended to all our needs, and the module enthusiasm reflects that
+    - I felt that this module was one of the toughest one, too hard for a third year student
+    - I think the lectures were really engaging and well taught
 - intent: chitchat/ask_name
   examples: |
     - What is your name?
@@ -123,6 +122,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - Thank you, goodbye
 - intent: affirm
   examples: |
     - yes

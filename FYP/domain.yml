@@ -110,11 +110,11 @@ responses:
 
   utter_slots_values:
   - text: |
-      As a quick check:\n
+      "As a quick check:\n
        - The module you are referring to is {module}\n
        - You rated the course a {course_rate} out of 5\n
        - Your overall feedback is : {course_structure}\n
-       Are these all correct?
+       Are these all correct?"
 
 
 
