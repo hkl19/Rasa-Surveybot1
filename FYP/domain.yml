@@ -1,9 +1,7 @@
 version: '3.1'
 intents:
-- affirm:
-    use_entities: []
-- bot_challenge:
-    use_entities: []
+- affirm
+- bot_challenge
 - chitchat:
     used_entities:
     - course_rate
@@ -11,18 +9,11 @@ intents:
     - year
     - module
     is_retrieval_intent: true
-- deny:
-    use_entities: []
-- goodbye:
-    use_entities: []
-- greet:  
-    use_entities: []
-
-- mood_great:
-    use_entities: []
-- mood_unhappy:
-    use_entities: []
-
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
 - request_SOLE_form
 - inform_year
 - inform_module_name
@@ -202,9 +193,10 @@ slots:
       conditions:
       - active_loop: restaurant_form
         requested_slot: outdoor_seating
+
 #SOLE slots
   year:
-    type: float
+    type: text
     mappings:
     - type: from_entity
       entity: year
@@ -220,10 +212,11 @@ slots:
       intent: inform_course_structure
       not_intent: course_rate
   course_rate:
-    type: float
+    type: text
     mappings:
     - type: from_entity
       entity: course_rate
+      not_intent: chitchat 
 
 
 

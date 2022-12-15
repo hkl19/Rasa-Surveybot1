@@ -9,6 +9,7 @@ nlu:
     - Let's start the SOLE survey
     - That's nice. Shall we start the survey?
     - Lets start the survey
+    - I want to carry out the survey please
 - intent: inform_year
   examples: |
     - I'm currently in [first](year) year.
@@ -24,6 +25,8 @@ nlu:
     - I'm in my [penultimate](year) year
     - I'm in my [third](year) year
     - I'd rate it a [four](course_rate) currently
+    - I'm currently in year [four](year) of my undergraduate degree
+    - I'm currently in year [three](year) of my bachelors 
 - intent: inform_module_name
   examples: |
     - I'd like to talk about [Mechatronics](module)
@@ -42,6 +45,7 @@ nlu:
     - I want to share my experience in [MTM](module)
     - I'll share my experience on the [MPT](module) module.
     - I'd like to share about [Machine](module) [Dynamics](module)
+    - Can i share my thoughts on Business [Economics](module)?
 - intent: inform_course_rate
   examples: |
     - I give it a [five](course_rate) out of five
@@ -65,6 +69,18 @@ nlu:
     - I think a [five](course_rate) out of five is justified
     - I am rating it a [four](course_rate)
     - I am rating it a [two](course_rate)
+    - I'll give it a [2](course_rate) out of 5
+    - I'll rate it a [4](course_rate)
+    - I'll rate it a [3](course_rate)
+    - Let me give it a [1](course_rate)
+    - I'll rate it a [5](course_rate)
+    - I'll give it a [4](course_rate) out of 5
+    - I'll rate it a [2](course_rate) overall
+    - I'll rate it a [1](course_rate) for its bad rep
+    - Let me give it a [3](course_rate) out of 5
+    - I'll rate it a [5](course_rate) out of 5
+
+
 - intent: inform_course_structure
   examples: |
     - I think the course overall was rushed through too quickly, with too little focus on the details
@@ -77,6 +93,7 @@ nlu:
     - The lecturer really attended to all our needs, and the module enthusiasm reflects that
     - I felt that this module was one of the toughest one, too hard for a third year student
     - I think the lectures were really engaging and well taught
+    - I really enjoyed the constant feedback for improvements, it helped me alot along the year
 - intent: chitchat/ask_name
   examples: |
     - What is your name?
@@ -89,6 +106,7 @@ nlu:
     - When is your birthday?
     - Who created you?
     - Who made you?
+    - Whos the one who created you? 
 - intent: out_of_scope
   examples: |
     - I want to order some food
@@ -123,6 +141,7 @@ nlu:
     - bye bye
     - see you later
     - Thank you, goodbye
+    - Thank you, have a nice day
 - intent: affirm
   examples: |
     - yes
@@ -186,3 +205,4 @@ nlu:
 - intent: chitchat
   examples: |
     - I'm fine thank you. What is your name?
+    - Whos the one that created you?
