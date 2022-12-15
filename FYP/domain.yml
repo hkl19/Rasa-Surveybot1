@@ -1,7 +1,9 @@
 version: '3.1'
 intents:
-- affirm
-- bot_challenge
+- affirm:
+    use_entities: []
+- bot_challenge:
+    use_entities: []
 - chitchat:
     used_entities:
     - course_rate
@@ -9,12 +11,17 @@ intents:
     - year
     - module
     is_retrieval_intent: true
-- deny
-- goodbye
-- greet
+- deny:
+    use_entities: []
+- goodbye:
+    use_entities: []
+- greet:  
+    use_entities: []
 
-- mood_great
-- mood_unhappy
+- mood_great:
+    use_entities: []
+- mood_unhappy:
+    use_entities: []
 
 - request_SOLE_form
 - inform_year
