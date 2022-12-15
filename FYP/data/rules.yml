@@ -17,10 +17,9 @@ rules:
   steps:
     - action: SOLE_form #run the form
     - active_loop: null       #deactivate form as all slots filled
-    - action: utter_submit    #Say you submitted
     - action: utter_slots_values  #Show the values provided
-
-  
+    - action: utter_submit    #Say you submitted
+    
 
 - rule: respond to chitchat
   steps:

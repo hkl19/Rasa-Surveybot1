@@ -6,7 +6,7 @@ intents:
     used_entities:
     - course_rate
     - course_structure
-    - lecturer_name
+    - year
     - module
     is_retrieval_intent: true
 - deny
@@ -17,25 +17,23 @@ intents:
 - mood_unhappy
 
 - request_SOLE_form
+- inform_year
 - inform_module_name
-- inform_lecturer_name
-- inform_happy_course_structure
-- inform_sad_course_structure
-- inform_happy_course_rate
-- inform_sad_course_rate
+- inform_course_structure
+- inform_course_rate
 
 responses:
 #responses for the SOLE survey
   utter_request_SOLE:
   - text: Shall we start with the survey? 
+  utter_ask_year:
+  - text: What year are you currently in? 
   utter_ask_module:
-  - text: Which module would you like to talk about today? 
-  utter_ask_lecturer_name:
-  - text: Great! Could I get the name of the lecturer as well? 
+  - text: Thanks for clarifying! Which module would you like to talk about today? 
   utter_ask_course_structure:
-  - text: What is your opinion on the structure of the course itself? 
+  - text: Awesome. As a start, what are your thoughts on the {module} course this year? 
   utter_ask_course_rate:
-  - text: How much would you rate this module on content alone from 1 to 5?
+  - text: Between 1 to 5, how much would you rate {module} by? 
   #utter_ask_lecturer:
   #- text: What are your thoughts on {lecturer}'s performance throughout the module?
   # #utter_ask_lecturer_rate:
@@ -79,15 +77,42 @@ responses:
   # - text: I'm sorry. I'll ensure that future years would be provided with better care! 
 
   utter_submit:
-  - text: All done! I shall submit this to the department. Thank you for participating
+    - condition:
+        - type: slot
+          name: course_rate
+          value: one
+      text: I apologize for your experience, I'll make sure to push your feedback to next year's {module} course! 
+    
+    - condition:
+        - type: slot
+          name: course_rate
+          value: two
+      text: I'm sorry to hear that, I'll ensure your feedback will be conveyed to the department 
+    
+    - condition:
+        - type: slot
+          name: course_rate
+          value: three
+      text: Not too bad, could've been better. I will ensure your feedback gets the attention it needs. 
+    
+    - condition:
+        - type: slot
+          name: course_rate
+          value: four
+      text: Thank you for your rating. I really appreciate you taking the time out for this.
+    
+    - condition:
+        - type: slot
+          name: course_rate
+          value: five
+      text: Guess you loved {module} huh! I shall convey your love letter to the lecturer ASAP. 
+
   utter_slots_values:
   - text: |
-      As a quick check
-       - The module you are referring to is {module}
-       - The lecturer in charge is {lecturer_name}
-       - You rated the course a {course_rate} out of 5
-       - You believe the structure is {course_structure}
-       - Your feedback was to {feedback}
+      As a quick check:\n
+       - The module you are referring to is {module}\n
+       - You rated the course a {course_rate} out of 5\n
+       - Your overall feedback is : {course_structure}\n
        Are these all correct?
 
 
@@ -134,9 +159,8 @@ session_config:
 
 #Entities
 entities:
-- lecturer_name
+- year
 - module
-- course_structure
 - course_rate
 # - lecturer_rating
 # - lecturer_feedback
@@ -171,23 +195,23 @@ slots:
       - active_loop: restaurant_form
         requested_slot: outdoor_seating
 #SOLE slots
+  year:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: year
   module:
     type: text
     mappings:
     - type: from_entity
       entity: module
-  lecturer_name:
-    type: text
-    mappings: 
-    - type: from_entity
-      entity: lecturer_name
   course_structure:
     type: text
     mappings:
-    - type: from_entity
-      entity: course_structure 
+    - type: from_text
+      intent: inform_course_structure
   course_rate:
-    type: float 
+    type: float
     mappings:
     - type: from_entity
       entity: course_rate
@@ -201,10 +225,11 @@ forms:
     ignored_intents:
     - chitchat
     required_slots:
+    - year
     - module
-    - lecturer_name
-    - course_structure
     - course_rate
+    - course_structure
+    
     # - lecturer_rating
     # - lecturer_feedback
     # - module_support
@@ -218,7 +243,3 @@ actions:
 - utter_happy
 - utter_slots_values
 - utter_submit
-- utter_cheer_course_structure
-- utter_cheer_course_feedback
-- utter_sad_course_structure
-- utter_sad_course_feedback
