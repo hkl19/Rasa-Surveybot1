@@ -105,10 +105,7 @@ responses:
   utter_chitchat/ask_birth:
   - image: https://asset-library.imperial.ac.uk/assetbank-imperial/images/assetbox/cc8302e2-4f78-48ec-89bf-11146a5bcc80/251369_display.jpgtra
     text: I'm born through the mechanical engineering department at Imperial! My creator is named Han Kee, I heard he's very friendly.
-  utter_welcome:
-  - text: Hi there. I'm Brain Bot, Imperial's first virtual assistant. I have an interesting survey specifically for you today, let me know if you feel like taking part. 
-
-
+ 
 
 session_config:
   session_expiration_time: 60
@@ -182,3 +179,4 @@ actions:
 - utter_happy
 - utter_slots_values
 - utter_submit
+- utter_welcome
