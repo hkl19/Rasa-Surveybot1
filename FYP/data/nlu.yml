@@ -10,6 +10,7 @@ nlu:
     - That's nice. Shall we start the survey?
     - Lets start the survey
     - I want to carry out the survey please
+    - I want to try the survey please
 - intent: inform_year
   examples: |
     - I'm currently in [first](year) year.
@@ -26,11 +27,27 @@ nlu:
     - I'm in my [third](year) year
     - I'd rate it a [four](course_rate) currently
     - I'm currently in year [four](year) of my undergraduate degree
-    - I'm currently in year [three](year) of my bachelors 
+    - I'm currently in year [three](year) of my bachelors
     - [4th](year) year
     - [3rd](year) year
     - [2nd](year) year
     - [1st](year) year
+    - [Fourth](year) year
+    - [4th](year) innit
+    - [4th](year) year ME4
+    - [Masters](year)
+    - [Postgrad](year) year
+    - I'm a [postgrad](year) student
+    - [Masters](year) course, so final
+    - [Third](year) year
+    - [7th](year) year Phd in Geography
+    - Uhhhhh [3rd](year) year
+    - [final](year) year
+    - In year [6](year) currently
+    - [2nd](year) year of my undergraduate degree
+    - [thirrrrrrd](year) year
+    - Year [1](year) of work
+    - I'm in my [penultimate](year) year
 - intent: inform_module_name
   examples: |
     - I'd like to talk about [Mechatronics](module)
@@ -50,15 +67,76 @@ nlu:
     - I'll share my experience on the [MPT](module) module.
     - I'd like to share about [Machine](module) [Dynamics](module)
     - Can i share my thoughts on Business [Economics](module)?
-    - [nanomaterials](module) 
+    - [nanomaterials](module)
     - [chemistry](module)
     - [renewable energy](module)
     - [plastic electronics](module)
     - [robotics](module)
     - [membrane biophysics](module)
     - [finance](module)
-    - [computing](module) 
-
+    - [computing](module)
+    - [Advanced Stress Analysis](module)
+    - [Aircraft Engine Technology](module)
+    - [AET](module)
+    - [FYP](module)
+    - [Final Year Project](module)
+    - [Intro to Robotics](module)
+    - [Principles of Epidermology](module)
+    - [Law](module)
+    - [ecm](module)
+    - [Accounting](module)
+    - [Fluids](module)
+    - My process modeling and [simulations](module) module
+    - [Strategic Management](module) module
+    - [Astrophysics](module) module
+    - [BME Biomechanics](module) module
+    - [Stress Analysis](module) module
+    - [Chemistry](module) module
+    - [Neuroscience](module)
+    - I was thinking of talking about the [Advanced Math](module) module cause I feel like it makes me cry the most.
+    - Introduction to [Thermodynamics](module)
+    - Maybe [thermodynamics](module)
+    - [Professional Engineering Skills](module)
+    - [Mechatronics 1](module)
+    - [Materials 1](module)
+    - [Design and Manufacture](module)
+    - [Foundational Mechanics](module)
+    - [Heat Transfer](module)
+    - [Maths and Computing](module)
+    - [Mathematics](module)
+    - [Dynamics](module) !
+    - [Machine Dynamics and Vibrations](module) would be nice to talk about
+    - [Design Make and Test](module) project
+    - [Manufacturing Technology and Management](module) with Graham
+    - [Finite Element Analysis](module)
+    - [Metal Processing Technology](module)
+    - [Fracture Mechanics](module)
+    - [Design Art and Creativity](module) is the lifeee
+    - [System Design and Optimisation](module)
+    - [Structure, Properties and Application of Polymers](module)
+    - [SPAP](module)
+    - [Computational Continuum Mechanics](module)
+    - [CCM](module)
+    - [FEA](module) is the best
+    - [Introduction to Nuclear](module)
+    - [Tribology](module)
+    - [Automotive Design](module) with Motorsport
+    - [ADM](module)
+    - [Future Clean Transport Technology](module)
+    - [FCT](module)
+    - [Mechanical Transmissions](module)
+    - [MTT](module)
+    - [Advanced Control](module)
+    - [Advanced Stress](module)
+    - [Applied Vibrational Engineering](module)
+    - [Applied Vibrations](module)
+    - [Combustion](module)
+    - [Composites](module)
+    - [Interfacing and Data Processing](module)
+    - [Nuclear Reactor Physics](module)
+    - [Nuclear Thermal Hydraulics](module)
+    - [Energy Systems](module)
+    - [Environment and Applied Fluids](module)
 - intent: inform_course_rate
   examples: |
     - I give it a [five](course_rate) out of five
@@ -92,8 +170,16 @@ nlu:
     - I'll rate it a [1](course_rate) for its bad rep
     - Let me give it a [3](course_rate) out of 5
     - I'll rate it a [5](course_rate) out of 5
-
-
+    - [4.99](course_rate)
+    - [5](course_rate)
+    - [3](course_rate)
+    - [4](course_rate)
+    - [1](course_rate)
+    - [3.5](course_rate)
+    - Fuckin horrible I dont understand matrices man. Can I give it a -1? Wait no fine I'll give it [2](course_rate) cuz ruth was nice and gave examples. Exam do be ass tho
+    - hmm [4](course_rate)
+    - Definitely a [5](course_rate)
+    - [1.1](course_rate)
 - intent: inform_course_structure
   examples: |
     - I think the course overall was rushed through too quickly, with too little focus on the details
@@ -107,14 +193,28 @@ nlu:
     - I felt that this module was one of the toughest one, too hard for a third year student
     - I think the lectures were really engaging and well taught
     - I really enjoyed the constant feedback for improvements, it helped me alot along the year
-    - boring 
-    - really interesting 
+    - boring
+    - really interesting
     - awesome
-    - love it 
+    - love it
     - amazing
     - uninformative
-    - its bad 
-    
+    - its bad
+    - Really good lecturing and an interesting engineering challenge
+    - Teach in very complicated way
+    - The lecturer explains concepts very well. The module feels well structured. It does not feel like it's going too fast.
+    - Mediocre, could be better
+    - He's not great. Good tutorials but meh lectures/notes
+    - Very enthusiastic although the module feels not very planned
+    - Extremely passionate and good
+    - It's bare long not gonna lie
+    - Lecture notes created in LaTex are such a turn on
+    - Very interesting stuff but can be a bit confusing
+    - Really like the course and the topics discussed
+    - too much troubleshooting than actual learning, takes up more than 80% of the coding time
+    - Lousy
+    - I think they should continue the module and have a statistics 2 module as it would be helpful to learn more about it
+    - Could be better. I did not take Primary School mathematics so I did not understand half of the mode. The other half of the module looks cool. Lecturer could be better, wish I had quit university this year to work on my business though.
 - intent: chitchat/ask_name
   examples: |
     - What is your name?
@@ -127,7 +227,7 @@ nlu:
     - When is your birthday?
     - Who created you?
     - Who made you?
-    - Whos the one who created you? 
+    - Whos the one who created you?
 - intent: out_of_scope
   examples: |
     - I want to order some food
@@ -149,6 +249,11 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - wagwarn
+    - sup
+    - wassup fam
+    - whats up sweetie
+    - Hello there
 - intent: goodbye
   examples: |
     - see ya
@@ -174,6 +279,9 @@ nlu:
     - exactly
     - yeah
     - Sure! that doesnt sound bad
+    - hellyea
+    - lets go
+    - i guess
 - intent: deny
   examples: |
     - no
