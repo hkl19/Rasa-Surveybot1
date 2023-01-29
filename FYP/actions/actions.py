@@ -7,25 +7,25 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-from typing import Any, Text, Dict, List
+#from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker, FormValidationAction
-from rasa_sdk.events import EventType
-from rasa_sdk.types import DomainDict
-from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import UserUtteranceReverted
+#from rasa_sdk import Action, Tracker, FormValidationAction
+#from rasa_sdk.events import EventType
+#from rasa_sdk.types import DomainDict
+#from rasa_sdk.executor import CollectingDispatcher
+#from rasa_sdk.events import UserUtteranceReverted
 
-class ActionHelloWord(Action):
+#class ActionHelloWord(Action):
 
-    def name(self) -> Text:
-        return "action_welcome"
+    #def name(self) -> Text:
+        #return "action_welcome"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    #def run(self, dispatcher: CollectingDispatcher,
+            #tracker: Tracker,
+            #domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message("Hello, I'm Imperial's Virtual Assistant, Brain Bot! How can I help you today?")
+        #dispatcher.utter_message("Hello, I'm Imperial's Virtual Assistant, Brain Bot!  How can I help you today?")
 
-        return [UserUtteranceReverted()]
+        #return [UserUtteranceReverted()]
 
     
