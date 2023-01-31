@@ -25,7 +25,7 @@ nlu:
     - I'm a year [one](year) student
     - I'm in my [penultimate](year) year
     - I'm in my [third](year) year
-    - I'd rate it a [four](course_rate) currently
+    - [4](year) 
     - I'm currently in year [four](year) of my undergraduate degree
     - I'm currently in year [three](year) of my bachelors
     - [4th](year) year
@@ -137,6 +137,7 @@ nlu:
     - [Nuclear Thermal Hydraulics](module)
     - [Energy Systems](module)
     - [Environment and Applied Fluids](module)
+    - [Stress](module)
 - intent: inform_course_rate
   examples: |
     - I give it a [five](course_rate) out of five
