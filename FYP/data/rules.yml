@@ -41,9 +41,13 @@ rules:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
-- rule: restart conversation 
+- rule: initiate restart
   steps:
-  - intent: restart_conversation
+  - intent: restart_conversation 
+  - action: utter_affirm_restart 
+
+- rule: confirm restart conversation 
+  steps:
   - action: utter_affirm_restart
   - intent: affirm
   - action: utter_restart
