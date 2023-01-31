@@ -94,4 +94,13 @@ stories:
   - action: utter_goodbye
 
 
-
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restart_conversation
+  - action: utter_restart
+  - action: action_restart
+  - action: action_listen
+  - intent: greet
+  - action: utter_greet 

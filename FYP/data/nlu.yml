@@ -4,14 +4,14 @@ nlu:
   examples: |
     - I would like to restart the app
     - Restart please
-    - Can I restart the conversation 
-    - Brainbot please restart 
-    - restart 
-    - reset the conversation 
+    - Can I restart the conversation
+    - Brainbot please restart
+    - restart
+    - reset the conversation
     - remake
     - can I redo this
-    - go back to the start 
-     
+    - go back to the start
+    - Lets revert the conversation
 - intent: request_SOLE_form
   examples: |
     - Let's start the survey
@@ -37,7 +37,7 @@ nlu:
     - I'm a year [one](year) student
     - I'm in my [penultimate](year) year
     - I'm in my [third](year) year
-    - [4](year) 
+    - [4](year)
     - I'm currently in year [four](year) of my undergraduate degree
     - I'm currently in year [three](year) of my bachelors
     - [4th](year) year
@@ -59,7 +59,6 @@ nlu:
     - [2nd](year) year of my undergraduate degree
     - [thirrrrrrd](year) year
     - Year [1](year) of work
-    - I'm in my [penultimate](year) year
 - intent: inform_module_name
   examples: |
     - I'd like to talk about [Mechatronics](module)
@@ -267,6 +266,7 @@ nlu:
     - wassup fam
     - whats up sweetie
     - Hello there
+    - Hello
 - intent: goodbye
   examples: |
     - see ya

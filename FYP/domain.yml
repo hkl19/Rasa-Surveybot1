@@ -22,9 +22,9 @@ intents:
 - restart_conversation
 responses:
   utter_affirm_restart:
-  - text: Are you sure you'd like to restart our conversation? 
+  - text: Are you sure you'd like to restart our conversation?
   utter_restart:
-  - text: Sure. Say hello to activate me again! 
+  - text: Sure. Say hello to activate me again!
   utter_request_SOLE:
   - text: Shall we start with the survey?
   utter_ask_year:
@@ -110,8 +110,6 @@ responses:
   utter_chitchat/ask_birth:
   - image: https://asset-library.imperial.ac.uk/assetbank-imperial/images/assetbox/cc8302e2-4f78-48ec-89bf-11146a5bcc80/251369_display.jpgtra
     text: I'm born through the mechanical engineering department at Imperial! My creator is named Han Kee, I heard he's very friendly.
- 
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -177,15 +175,15 @@ forms:
     - course_rate
     - course_structure
 actions:
+- action_default_fallback
+- action_restart
+- utter_affirm_restart
 - utter_ask_continue
 - utter_chitchat
 - utter_goodbye
 - utter_greet
 - utter_happy
+- utter_restart
 - utter_slots_values
 - utter_submit
 - utter_welcome
-- utter_affirm_restart
-- utter_restart
-- action_restart 
-- action_default_fallback
