@@ -188,3 +188,4 @@ actions:
 - utter_affirm_restart
 - utter_restart
 - action_restart 
+- action_default_fallback

@@ -36,7 +36,10 @@ class ActionRestarted(Action):
     def name(self):
         return "action_restart"
 
-    def run(self, dispatcher, tracker, domain):
-        return [Restarted()] 
+    async def run(
+      self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+  ) -> List[Dict[Text, Any]]:
 
+      # custom behavior
 
+      return [Restarted()]
