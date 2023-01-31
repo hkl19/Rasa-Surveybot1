@@ -24,9 +24,7 @@ responses:
   utter_affirm_restart:
   - text: Are you sure you'd like to restart our conversation? 
   utter_restart:
-  - text: Sure, I'll reboot up again. See you soon! 
-  - text: Alright. Say hello to activate me again! 
-  - text: Okay. Nice meeting you! Hope to talk to you again     
+  - text: Sure. Say hello to activate me again! 
   utter_request_SOLE:
   - text: Shall we start with the survey?
   utter_ask_year:

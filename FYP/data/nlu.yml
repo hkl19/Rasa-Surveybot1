@@ -10,7 +10,8 @@ nlu:
     - reset the conversation 
     - remake
     - can I redo this
-    - go back to the start  
+    - go back to the start 
+     
 - intent: request_SOLE_form
   examples: |
     - Let's start the survey
