@@ -7,13 +7,14 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-#from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List
 
-#from rasa_sdk import Action, Tracker, FormValidationAction
-#from rasa_sdk.events import EventType
-#from rasa_sdk.types import DomainDict
-#from rasa_sdk.executor import CollectingDispatcher
-#from rasa_sdk.events import UserUtteranceReverted
+from rasa_sdk import Action, Tracker, FormValidationAction
+from rasa_sdk.events import EventType
+from rasa_sdk.types import DomainDict
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import UserUtteranceReverted, Restarted, ActionReverted
+
 #class ActionHelloWord(Action):
 
 #    def name(self) -> Text:
@@ -27,4 +28,15 @@
 
 #        return [UserUtteranceReverted()]
 
-    
+
+
+class ActionRestarted(Action):
+#Restarting chat 
+
+    def name(self):
+        return "action_restart"
+
+    def run(self, dispatcher, tracker, domain):
+        return [Restarted()] 
+
+
