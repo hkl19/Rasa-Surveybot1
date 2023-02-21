@@ -15,18 +15,18 @@ from rasa_sdk.types import DomainDict
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import UserUtteranceReverted, Restarted, ActionReverted
 
-#class ActionHelloWord(Action):
+class ActionHelloWord(Action):
 
-#    def name(self) -> Text:
- #       return "action_welcome"
+    def name(self) -> Text:
+       return "action_welcome"
 
-  #  def run(self, dispatcher: CollectingDispatcher,
-   #         tracker: Tracker,
-    #        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-     #   dispatcher.utter_message("Hello, I'm Imperial's Virtual Assistant, Brain Bot!  How can I help you today?")
+        dispatcher.utter_message("Hello, I'm Imperial's Virtual Assistant, Brain Bot!  How can I help you today?")
 
-#        return [UserUtteranceReverted()]
+        return [UserUtteranceReverted()]
 
 
 
