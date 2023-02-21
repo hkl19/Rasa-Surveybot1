@@ -23,6 +23,7 @@ nlu:
     - Lets start the survey
     - I want to carry out the survey please
     - I want to try the survey please
+    - I'd like to start the survey
 - intent: inform_year
   examples: |
     - I'm currently in [first](year) year.
@@ -59,6 +60,7 @@ nlu:
     - [2nd](year) year of my undergraduate degree
     - [thirrrrrrd](year) year
     - Year [1](year) of work
+    - I'm currently in my [fourth](year) year!
 - intent: inform_module_name
   examples: |
     - I'd like to talk about [Mechatronics](module)
@@ -149,6 +151,7 @@ nlu:
     - [Energy Systems](module)
     - [Environment and Applied Fluids](module)
     - [Stress](module)
+    - I'd like to share my thoughts on [ECM](module)
 - intent: inform_course_rate
   examples: |
     - I give it a [five](course_rate) out of five
@@ -192,6 +195,7 @@ nlu:
     - hmm [4](course_rate)
     - Definitely a [5](course_rate)
     - [1.1](course_rate)
+    - I'd give it a [five](course_rate) since its so good
 - intent: inform_course_structure
   examples: |
     - I think the course overall was rushed through too quickly, with too little focus on the details
@@ -227,6 +231,7 @@ nlu:
     - Lousy
     - I think they should continue the module and have a statistics 2 module as it would be helpful to learn more about it
     - Could be better. I did not take Primary School mathematics so I did not understand half of the mode. The other half of the module looks cool. Lecturer could be better, wish I had quit university this year to work on my business though.
+    - I think that the course was well done, but work load was significantly stressful
 - intent: chitchat/ask_name
   examples: |
     - What is your name?
@@ -344,7 +349,9 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - what are you?
+    - Im good. Who are you?
 - intent: chitchat
   examples: |
     - I'm fine thank you. What is your name?
     - Whos the one that created you?
+    - Interesting, where were you born?

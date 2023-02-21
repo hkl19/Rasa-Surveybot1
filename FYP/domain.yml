@@ -115,8 +115,8 @@ session_config:
   carry_over_slots_to_new_session: true
 entities:
 - year
-- module
 - course_rate
+- module
 slots:
   cuisine:
     type: text
@@ -183,6 +183,7 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_happy
+- utter_iamabot
 - utter_restart
 - utter_slots_values
 - utter_submit

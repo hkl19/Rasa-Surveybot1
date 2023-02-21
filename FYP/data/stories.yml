@@ -104,3 +104,36 @@ stories:
   - action: action_listen
   - intent: greet
   - action: utter_greet 
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: chitchat
+  - action: utter_chitchat
+  - intent: request_SOLE_form
+  - action: SOLE_form
+  - active_loop: SOLE_form
+  - slot_was_set:
+    - requested_slot: year
+  - slot_was_set:
+    - year: fourth
+  - slot_was_set:
+    - requested_slot: module
+  - slot_was_set:
+    - module: ECM
+  - slot_was_set:
+    - requested_slot: course_rate
+  - slot_was_set:
+    - course_rate: five
+  - slot_was_set:
+    - requested_slot: course_structure
+  - slot_was_set:
+    - course_structure: I think that the course was well done, but work load was significantly stressful
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_slots_values
+  - action: utter_submit
