@@ -1,5 +1,10 @@
 version: "3.1"
 nlu:
+- intent: tell_story
+  examples: |
+    - Tell me a story BrainBot
+    - Could you tell me a story
+    - Read me a bedtime story
 - intent: restart_conversation
   examples: |
     - I would like to restart the app
@@ -24,6 +29,13 @@ nlu:
     - I want to carry out the survey please
     - I want to try the survey please
     - I'd like to start the survey
+    - Can I express my thoughts on the course
+    - I want to share my experience today
+    - Let me tell you about what I think about Mech Eng
+    - Can I share what I feel about the course?
+    - I want to share about my thoughts on the course
+    - I want to share about my experience of being at Imperial
+    - Let me share my thoughts on the engineering department 
 - intent: inform_year
   examples: |
     - I'm currently in [first](year) year.
@@ -238,6 +250,8 @@ nlu:
     - May I know your name?
     - What do people call you?
     - Do you have a name for yourself?
+    - How do I call you? 
+    - What are you pronouns?
 - intent: chitchat/ask_birth
   examples: |
     - Where were your born?
@@ -245,11 +259,15 @@ nlu:
     - Who created you?
     - Who made you?
     - Whos the one who created you?
+    - Where were you built?
 - intent: out_of_scope
   examples: |
     - I want to order some food
     - Who is the US President?
     - Do you love KFC or Mcdonalds?
+    - Are they aliens? 
+    - What are your thoughts on feminism
+    - Tell me about your thoughts on love 
 - intent: greet
   examples: |
     - hey
@@ -272,6 +290,8 @@ nlu:
     - whats up sweetie
     - Hello there
     - Hello
+    - How are you today
+    - How is it going
 - intent: goodbye
   examples: |
     - see ya
@@ -344,12 +364,9 @@ nlu:
     - so sad
 - intent: bot_challenge
   examples: |
-    - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-    - what are you?
-    - Im good. Who are you?
 - intent: chitchat
   examples: |
     - I'm fine thank you. What is your name?

@@ -20,7 +20,10 @@ intents:
 - mood_unhappy
 - request_SOLE_form
 - restart_conversation
+- tell_story
 responses:
+  utter_story:
+  - text: Once upon a time, in a faraway land, there was a handsome ogre called Shrek. Shrek lived alone in the forest, without a friend. He loved to swim in swamps. His favourite pass time is eating babies (baby mushrooms), who all screamed in terror as his mouth devoured them one by one. He was a happy ogre. 
   utter_affirm_restart:
   - text: Are you sure you'd like to restart our conversation?
   utter_restart:
@@ -35,34 +38,23 @@ responses:
   - text: Awesome. As a start, what are your thoughts on the {module} course this year?
   utter_ask_course_rate:
   - text: Between 1 to 5, how much would you rate {module} by?
-  utter_cheer_course_structure:
-  - text: Sounds great, I'm glad you genuinely enjoyed the content!
-  - text: Great! Seems to me that everyone loved how {module} was structured this year.
-  utter_cheer_course_feedback:
-  - text: Great to hear. Seems like there's been alot of positive feedback for {module} this year!
-  - text: Sweet. I'll take note of that, and perhaps share it with {lecturer} too.
-  utter_sad_course_structure:
-  - text: Aw, I'm sorry to hear that. We will take your words into account.
-  - text: I'm sorry to hear that. I'll make sure the department gets to hear this.
-  utter_sad_course_feedback:
-  - text: I apologize for the suboptimal delivery this year. I'll pass your feedback to the department.
-  - text: I apologize for the trouble. I'll make sure your feedback will lead to better changes moving forward.
+
   utter_submit:
   - condition:
     - type: slot
       name: course_rate
       value: one
-    text: I apologize for your experience, I'll make sure to push your feedback to next year's {module} course!
+    text: I apologise for the suboptimal delivery this year. I will make sure to push your feedback to the department.
   - condition:
     - type: slot
       name: course_rate
       value: two
-    text: I'm sorry to hear that, I'll ensure your feedback will be conveyed to the department
+    text: Thank you for your critism. I'll ensure your feedback will be conveyed to the department
   - condition:
     - type: slot
       name: course_rate
       value: three
-    text: Not too bad, could've been better. I will ensure your feedback gets the attention it needs.
+    text: I see some room for improvement. I will ensure your feedback gets the attention it needs.
   - condition:
     - type: slot
       name: course_rate
@@ -72,28 +64,23 @@ responses:
     - type: slot
       name: course_rate
       value: five
-    text: Guess you loved {module} huh! I shall convey your love letter to the lecturer ASAP.
+    text: Guess you really loved {module}! I shall convey your love letter to the lecturer ASAP.
   utter_slots_values:
   - text: |
-      "As a quick check:\n
-       - The module you are referring to is {module}\n
-       - You rated the course a {course_rate} out of 5\n
-       - Your overall feedback is : {course_structure}\n
-       Are these all correct?"
+      "As a quick check, you mentioned that:
+       - The module you are referring to is {module}.
+       - You rated the course a {course_rate} out of 5.
+       - Your overall feedback is : {course_structure}.
   utter_out_of_scope:
-  - text: Sorry, I couldn't handle that request. Could you try rephrasing?
-  utter_ask_cuisine:
-  - text: What cuisine would you like today?
-  utter_ask_num_people:
-  - text: How many people in total?
-  utter_ask_outdoor_seating:
-  - text: Do you want to sit outside?
+  - text: Sorry, I couldn't handle that request just yet. 
+  utter_ask_rephrase:
+  - text: I'm sorry I didn't quite understand that. Could you please rephrase? 
   utter_greet:
-  - text: Hey! How are you?
-  - text: Howdy Partner
-  - text: Hello, nice to meet you!
-  - text: Hiya, how is your day today
-  - text: Hello, what can I do for you today
+  - text: I'm doing splendid, how about you?
+  - text: Howdy Partner, it's been a great week. How about you?
+  - text: Hello, nice to meet you! I had an awesome week. How about you?
+  - text: Hiya, I'm doing well. How is your day today?
+  - text: Hello, its been great. What can I do for you today?
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -108,8 +95,7 @@ responses:
   utter_chitchat/ask_name:
   - text: My given name is Brainbot, but you can call me anything!
   utter_chitchat/ask_birth:
-  - image: https://asset-library.imperial.ac.uk/assetbank-imperial/images/assetbox/cc8302e2-4f78-48ec-89bf-11146a5bcc80/251369_display.jpgtra
-    text: I'm born through the mechanical engineering department at Imperial! My creator is named Han Kee, I heard he's very friendly.
+  - text: I'm born through the mechanical engineering department at Imperial! My creator is named Han Kee, I heard he's very friendly.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -118,31 +104,6 @@ entities:
 - course_rate
 - module
 slots:
-  cuisine:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: cuisine
-  num_people:
-    type: float
-    mappings:
-    - type: from_entity
-      entity: num_people
-  outdoor_seating:
-    type: bool
-    mappings:
-    - type: from_intent
-      intent: affirm
-      value: true
-      conditions:
-      - active_loop: restaurant_form
-        requested_slot: outdoor_seating
-    - type: from_intent
-      intent: deny
-      value: false
-      conditions:
-      - active_loop: restaurant_form
-        requested_slot: outdoor_seating
   year:
     type: text
     mappings:
@@ -175,16 +136,15 @@ forms:
     - course_rate
     - course_structure
 actions:
-- action_default_fallback
+- utter_greet
 - action_restart
 - utter_affirm_restart
-- utter_ask_continue
 - utter_chitchat
 - utter_goodbye
-- utter_greet
 - utter_happy
 - utter_iamabot
 - utter_restart
 - utter_slots_values
 - utter_submit
-- utter_welcome
+- utter_ask_rephrase
+- utter_story

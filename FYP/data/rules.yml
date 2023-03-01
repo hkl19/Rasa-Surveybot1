@@ -46,3 +46,13 @@ rules:
   - intent: restart_conversation 
   - action: utter_restart
   - action: action_restart
+
+- rule: Prompts user to rephrase for low confidence intervals
+  steps:
+  - intent: nlu_fallback
+  - action: utter_ask_rephrase 
+
+- rule: tell a story to the user
+  steps:
+  - intent: tell_story
+  - action: utter_story
